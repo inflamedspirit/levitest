@@ -1,0 +1,15 @@
+*.o
+*.err
+*.out
+*~
+*#
+#*
+*.mod
+*/levi
+*/testlin
+analysis/
+stdout/
+stdout/
+stderr/
+parameters/
+bin/
