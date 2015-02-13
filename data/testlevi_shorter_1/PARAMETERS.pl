@@ -4,8 +4,8 @@
 # this is a series designed to test the momentum/position dists
 # for relatively 'short' runs (with varying amount of jobs)
 
-our $run_title = "testlevi_shorter_2";
-our $num_jobs = 100000;
+our $run_title = "testlevi_shorter_1";
+our $num_jobs = 10000;
 
 our $head_dir = "/home/wwe/levitest";
 
@@ -246,34 +246,20 @@ our $seed_increment=1;
 #};
 
 
-#$histogramlist{longer1} = {
-#   type         => 'abs_norm_series_cumulative',
-#   infilebase   => "$data_dir/testlevi_longer_1/stdout/stdout",
-#   item         => '2',
-#   num          => "100",
-#};
+$histogramlist{longer1} = {
+   type         => 'abs_norm_series_cumulative',
+   infilebase   => "$data_dir/testlevi_longer_1/stdout/stdout",
+   item         => '2',
+   num          => "100",
+};
 
-$histogramlist{longer2_400} = {
+$histogramlist{longer2} = {
    type         => 'abs_norm_series_cumulative',
    infilebase   => "$data_dir/testlevi_longer_2/stdout/stdout",
    item         => '2',
-   num          => "400",
+   num          => "1000",
 };
 
-#$histogramlist{shorter1} = {
-#   type         => 'abs_norm_series_cumulative',
-#   infilebase   => "$data_dir/testlevi_shorter_1/stdout/stdout",
-#   item         => '2',
-#   num          => "10000",
-#};
-#
-#$histogramlist{shorter2} = {
-#   type         => 'abs_norm_series_cumulative',
-#   infilebase   => "$data_dir/testlevi_shorter_2/stdout/stdout",
-#   item         => '2',
-#   num          => "100000",
-#};
-#
-#
+
 
 return 1;

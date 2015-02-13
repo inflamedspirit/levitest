@@ -253,27 +253,27 @@ our $seed_increment=1;
 #   num          => "100",
 #};
 
-$histogramlist{longer2_400} = {
+#$histogramlist{longer2} = {
+#   type         => 'abs_norm_series_cumulative',
+#   infilebase   => "$data_dir/testlevi_longer_2/stdout/stdout",
+#   item         => '2',
+#   num          => "1000",
+#};
+
+$histogramlist{shorter1} = {
    type         => 'abs_norm_series_cumulative',
-   infilebase   => "$data_dir/testlevi_longer_2/stdout/stdout",
+   infilebase   => "$data_dir/testlevi_shorter_1/stdout/stdout",
    item         => '2',
-   num          => "400",
+   num          => "10000",
 };
 
-#$histogramlist{shorter1} = {
-#   type         => 'abs_norm_series_cumulative',
-#   infilebase   => "$data_dir/testlevi_shorter_1/stdout/stdout",
-#   item         => '2',
-#   num          => "10000",
-#};
-#
-#$histogramlist{shorter2} = {
-#   type         => 'abs_norm_series_cumulative',
-#   infilebase   => "$data_dir/testlevi_shorter_2/stdout/stdout",
-#   item         => '2',
-#   num          => "100000",
-#};
-#
-#
+$histogramlist{shorter2} = {
+   type         => 'abs_norm_series_cumulative',
+   infilebase   => "$data_dir/testlevi_shorter_2/stdout/stdout",
+   item         => '2',
+   num          => "100000",
+};
+
+
 
 return 1;
