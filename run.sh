@@ -1,3 +1,3 @@
 #!/bin/bash
-#qsub /home/wwe/motsim2/scripts/launchscript.pl
-/home/wwe/levitest/scripts/launchscript.pl
+qsub /home9/wwe/levitest/scripts/launchscript.pl
+#/home9/wwe/levitest/scripts/launchscript.pl
