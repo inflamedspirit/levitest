@@ -4,10 +4,10 @@
 # this is a series designed to test the momentum/position dists
 # for relatively 'short' runs (with varying amount of jobs)
 
-our $run_title = "testlevi_longer_2rep";
-our $num_jobs = 1000;
+our $run_title = "testlevi_shorter_2";
+our $num_jobs = 100000;
 
-our $head_dir = "/home9/wwe/levitest";
+our $head_dir = "/home/wwe/levitest";
 
 our $root_paramfile = "$head_dir/PARAMETERS.pl";
 
@@ -30,7 +30,7 @@ our $parametermotbase = "$parameter_dir/parameters.mot";
 
 # Simulation Parameters
 our $seed=1;
-our $steps=1000000;
+our $steps=100;
 our $thresh=10;
 our $gamma=0.01;
 
@@ -245,12 +245,35 @@ our $seed_increment=1;
 #   num          => "10000",
 #};
 
-$histogramlist{longer2} = {
+
+#$histogramlist{longer1} = {
+#   type         => 'abs_norm_series_cumulative',
+#   infilebase   => "$data_dir/testlevi_longer_1/stdout/stdout",
+#   item         => '2',
+#   num          => "100",
+#};
+
+$histogramlist{longer2_400} = {
    type         => 'abs_norm_series_cumulative',
-   infilebase   => "$data_dir/testlevi_longer_2rep/stdout/stdout",
+   infilebase   => "$data_dir/testlevi_longer_2/stdout/stdout",
    item         => '2',
-   num          => "1000",
+   num          => "400",
 };
 
+#$histogramlist{shorter1} = {
+#   type         => 'abs_norm_series_cumulative',
+#   infilebase   => "$data_dir/testlevi_shorter_1/stdout/stdout",
+#   item         => '2',
+#   num          => "10000",
+#};
+#
+#$histogramlist{shorter2} = {
+#   type         => 'abs_norm_series_cumulative',
+#   infilebase   => "$data_dir/testlevi_shorter_2/stdout/stdout",
+#   item         => '2',
+#   num          => "100000",
+#};
+#
+#
 
 return 1;

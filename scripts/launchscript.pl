@@ -3,9 +3,9 @@
 #PBS -e motsim.err
 #PBS -o motsim.out
 #PBS -m abe
-#PBS -q generic
-#PBS -l nodes=1:ppn=12
-#PBS -l walltime=12:00:00
+#PBS -q scavenger
+#PBS -l nodes=2:ppn=8
+#PBS -l walltime=96:00:00
 
 # -N Name
 # -e stderr file for THIS script
@@ -51,7 +51,7 @@ our $parameterbase;
 #}
 
 #Ew, hardcoding the parameter file.
-my $paramfile = "/home9/wwe/levitest/PARAMETERS.pl";
+my $paramfile = "/home/wwe/levitest/PARAMETERS.pl";
 require $paramfile or die("Could not find parameter file.");
 
 
@@ -79,7 +79,7 @@ my $flip_display = 0;
 ### get node file name from shell
 my $pbs_nodefile = $ENV{'PBS_NODEFILE'};
 # use our custom nodefile since the queing system is down
-#my $pbs_nodefile = "/home/wwe/levitest/manual_nodefile";
+my $pbs_nodefile = "/home/wwe/levitest/manual_nodefile";
 
 my $JOB_ID = $ENV{'PBS_JOBID'};
 
@@ -168,9 +168,9 @@ while ( $#job_array >= 0 or $running_jobs > 0 ) {
     $flip_display = !$flip_display;
     if( $flip_display ){
 	my $percentcomplete = ($num_finished_jobs/$num_jobs)*100.0;
-	system("qalter -N \"motsim:($percentcomplete%)\" $JOB_ID");
+#	system("qalter -N \"motsim:($percentcomplete%)\" $JOB_ID");
     } else {
-	system("qalter -N \"$run_title\" $JOB_ID");
+#	system("qalter -N \"$run_title\" $JOB_ID");
     }
 
 #    print "qalter -N \"motsim:($percentcomplete%)\" $JOB_ID";
@@ -179,7 +179,7 @@ while ( $#job_array >= 0 or $running_jobs > 0 ) {
 
 
     # wait a bit so we don't overload the processor with admin stuff
-    sleep 3;
+    sleep 1;
 
 }
 

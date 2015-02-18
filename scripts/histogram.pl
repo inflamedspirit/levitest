@@ -52,7 +52,7 @@ foreach my $histogram_title (keys %histogramlist){
 	for($j=1; $j<=$num; $j++) {
 	    my $infile = "$filebase.$j";
 	    print "Scanning $infile...\n";
-	    open FILE, "<$infile" or print("Error, missing data file. Attempting to open next file...\n"), next;
+	    open FILE, "<$infile" or print "Error, missing data file. Attempting to save data up to this point...\n", last;
 	    while(<FILE>){
 		my $line_full = $_;
 		my @line = split(/\s+/);
@@ -109,7 +109,7 @@ foreach my $histogram_title (keys %histogramlist){
 	for($j=1; $j<=$num; $j++) {
 	    my $infile = "$filebase.$j";
 	    print "Scanning $infile...\n";
-	    open FILE, "<$infile" or print("Error, missing data file. Attempting to open next file...\n"), next;
+	    open FILE, "<$infile" or print "Error, missing data file. Attempting to save data up to this point...\n", last;
 	    while(<FILE>){
 		my $line_full = $_;
 		my @line = split(/\s+/);
